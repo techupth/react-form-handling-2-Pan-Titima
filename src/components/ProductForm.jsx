@@ -4,7 +4,7 @@ function ProductForm() {
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
-  const [price, setPrice] = useState(0.0);
+  const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = () => {
@@ -16,6 +16,12 @@ function ProductForm() {
     }
 
     window.alert(JSON.stringify(data));
+
+        // Set เพื่อให้ Input แสดงข้อความว่างๆ
+        setName("");
+        setImage("");
+        setPrice("");
+        setDescription("");
   }
 
   return (
@@ -30,6 +36,7 @@ function ProductForm() {
             type="text"
             placeholder="Enter name here"
             onChange={(event) => {setName(event.target.value)}}
+            value={name}
           />
         </label>
       </div>
@@ -42,6 +49,7 @@ function ProductForm() {
             type="text"
             placeholder="Enter image url here"
             onChange={(event) => {setImage(event.target.value)}}
+            value={image}
           />
         </label>
       </div>
@@ -54,6 +62,7 @@ function ProductForm() {
             type="number"
             placeholder="Enter price here"
             onChange={(event) => {setPrice(event.target.value)}}
+            value={price}
           />
         </label>
       </div>
@@ -66,6 +75,7 @@ function ProductForm() {
             type="text"
             placeholder="Enter description here"
             onChange={(event) => {setDescription(event.target.value)}}
+            value={description}
             rows={4}
             cols={30}
           />
